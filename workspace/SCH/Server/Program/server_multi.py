@@ -25,7 +25,7 @@ class ThreadedServer(object):
             try:
                 data = client.recv(size)
                 if data:
-                    # Set the response to echo back the recieved data 
+                    # Set the response to echo back the recieved data
                     response = data
                     client.send(response)
                     datalist = data.split('/')
@@ -69,4 +69,4 @@ if __name__ == "__main__":
 
     ThreadedServer('',port_num).listen()
 
-# Data Format : ½Ã°£/GW_ID/EUI/data
+# Data Format : ï¿½Ã°ï¿½/GW_ID/EUI/data

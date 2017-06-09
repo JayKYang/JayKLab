@@ -47,7 +47,8 @@ class LoRa(object):
 	def recv(selfa,ser):
 		print("Lora open")
 		while True:
-			recv_msg = ser.read(BUFSZ)	
+			recv_msg = ser.readline()
+			print(recv_msg)
 			if not recv_msg:
 				break
 			else:
@@ -63,8 +64,8 @@ if __name__ == "__main__":
 	ser_baud = 115200
 
 	TCPComm = Gateway(sock_host, sock_port)
+	#threading.Thread(target = TCPComm.recv(TCPComm.sock)).start()
+
 	LoraComm = LoRa(ser_port, ser_baud)
 
-	threading.Thread(target = LoraComm.recv(LoraComm.ser)).start
-	threading.Thread(target = TCPComm.recv(TCPComm.sock)).start 
-	
+	threading.Thread(target = LoraComm.recv(LoraComm.ser)).start()
