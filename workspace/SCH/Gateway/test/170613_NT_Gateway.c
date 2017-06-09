@@ -100,3 +100,13 @@ void error_handling(char *msg)
 	exit(1);
 }
 
+void *comm_send_msg(void *arg)
+{
+
+}
+
+void *comm_recv_msg(void *arg)
+{
+
+}
+
